@@ -58,9 +58,9 @@ function App() {
         {/* <Route exact path="/checkout">
           <Checkout />
         </Route> */}
-        <Route exact path='/admin'>
+        {/* <Route exact path='/admin'>
           <Admin />
-        </Route>
+        </Route> */}
       </div>
     </Router>
 
