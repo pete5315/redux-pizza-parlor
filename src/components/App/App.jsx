@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import Header from '../Header/Header'
+
+import Header from '../Header/Header';
 import PizzaList from '../PizzaList/PizzaList'
 import CustomerForm from '../CustomerForm/CustomerForm'
 import Checkout from '../Checkout/Checkout'
@@ -9,9 +10,11 @@ import Admin from '../Admin/Admin'
 import Footer from '../Footer/Footer'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
+
 function App() {
 
   return (
+
     <Router>
       <div className='App'>
         <header className='App-header'>
@@ -37,6 +40,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+
   );
 }
 
