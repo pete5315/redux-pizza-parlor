@@ -5,7 +5,7 @@ import App from './components/App/App';
 
 const pizzaList = (state = [], action) => {
   // TODO: Save all pizza options from the server
-  if (action.type === `GET_ORDERED_PIZZAS`) {
+  if (action.type === `GET_PIZZAS`) {
     // this will replace the product list, payload is array of all products
     return  action.payload 
   }
