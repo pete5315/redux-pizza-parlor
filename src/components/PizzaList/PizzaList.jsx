@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux"
+import PizzaCard from '../PizzaCard/PizzaCard'
 
 function PizzaList(){
-    const pizzaList = useSelector(store=> store.PizzaList)
+    const pizzaList = useSelector(store => store.pizzaList)
     return(
         <div>
         {/*TODO change to be carousel as container for cards */}
