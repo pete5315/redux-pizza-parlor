@@ -4,6 +4,10 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 
 import Header from '../Header/Header';
+
+
+import { useEffect } from 'react';
+
 import PizzaList from '../PizzaList/PizzaList'
 import CustomerForm from '../CustomerForm/CustomerForm'
 import Checkout from '../Checkout/Checkout'
@@ -12,7 +16,24 @@ import Footer from '../Footer/Footer'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 
+
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    getPizzaData()
+  })
+
+  const getPizzaData = () =>{
+    axios.get('/')
+    .then((response)=>{
+      console.log(response.data);
+      dispatch({type:'GET_PIZZAS', payload: response.data })
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  }
 
 
 
