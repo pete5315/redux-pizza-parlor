@@ -10,9 +10,8 @@ import { useEffect } from 'react';
 
 import PizzaList from '../PizzaList/PizzaList'
 import CustomerForm from '../CustomerForm/CustomerForm'
-import Checkout from '../Checkout/Checkout'
+// import Checkout from '../Checkout/Checkout'
 import Admin from '../Admin/Admin'
-import Footer from '../Footer/Footer'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 
@@ -25,7 +24,7 @@ function App() {
   })
 
   const getPizzaData = () =>{
-    axios.get('/')
+    axios.get('/api/pizza')
     .then((response)=>{
       console.log(response.data);
       dispatch({type:'GET_PIZZAS', payload: response.data })
@@ -52,17 +51,16 @@ function App() {
         <Header />
         <Route exact path="/">
           <PizzaList />
-        </Route>  
+        </Route>
         <Route exact path="/form">
           <CustomerForm />
-        </Route>  
-        <Route exact path="/checkout">
+        </Route>
+        {/* <Route exact path="/checkout">
           <Checkout />
-        </Route>  
-        <Route exact path="/admin">
+        </Route> */}
+        <Route exact path='/admin'>
           <Admin />
-        </Route>  
-        <Footer />
+        </Route>
       </div>
     </Router>
 
