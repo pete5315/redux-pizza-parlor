@@ -1,22 +1,46 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+
 function CustomerForm() {
+
+    const [name, setName] = useState("");
+    const [address, setAddress] = useState("");
+    const [city, setCity] = useState("");
+    const [zipCode, setZipCode] = useState("");
+
+    dispatch = useDispatch();
+    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        
+        dispatch({type: "GET_FORM", payload: {name, address, city, zipCode, pickup, delivery}})
+        
+        setName("");
+        setAddress("");
+        setCity("");
+        setZipCode("");
+    }   
+
 
     return (
         <>
         <h2>Step 2: Customer Information</h2>
-        <form>
-            <input placeholder="Name" type="text"></input>
+        <form onSubmit={handleSubmit}>
+            <input placeholder="Name" type="text" value={name} onChange={(event) => setName(event.target.value)}></input>
             <br></br><br></br>
-            <input placeholder="Street Address" type="text"></input>
+            <input placeholder="Street Address" type="text" value={address} onChange={(event) => setAddress(event.target.value)}></input>
             <br></br><br></br>
-            <input placeholder="City" type="text"></input>
+            <input placeholder="City" type="text" value={city} onChange={(event) => setCity(event.target.value)}></input>
             <br></br><br></br>
-            <input placeholder="Zip Code" type="text"></input>
+            <input placeholder="Zip Code" type="text" value={zipCode} onChange={(event) => setZipCode(event.target.value)}></input>
             <br></br><br></br>
             <input type="radio" id="pickup-btn"></input>
             <label htmlFor="pickup-btn">PICKUP</label>
             <br></br><br></br>
-            <input type="radio"></input>
-            <label htmlFor="pickup-btn">DELIVERY</label>
+            <input type="radio" id="delivery-btn"></input>
+            <label htmlFor="delivery-btn">DELIVERY</label>
+            <br></br><br></br>
+            <button type="submit">Next</button>
         </form>
         </>
     )
