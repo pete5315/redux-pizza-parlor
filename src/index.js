@@ -23,6 +23,15 @@ const orderList = (state = [], action) => {
   return state;
 };
 
+const formData = (state = [], action) => {
+  // TODO: Save all pizza options from the server
+  if (action.type === `GET_FORM`) {
+    // this will replace the product list, payload is array of all products
+    return  action.payload 
+  }
+  return state;
+};
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
