@@ -5,7 +5,26 @@ table, thead, th, tr, td {
 }
 
 table {
-    
     margin-left: auto;
     margin-right: auto;
+}
+
+header {
+    background-color:mediumblue;
+    color: white;
+    text-align: left;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 15px
+}
+
+#header {
+    padding-bottom: 50px;
+}
+
+th {
+    background-color:darkgray;
+}
+
+tr:nth-child(even) {
+    background-color:antiquewhite;
 }
