@@ -1,0 +1,5 @@
+table, thead, th, tr, td {
+    border: 1px black solid;
+    border-collapse: collapse;
+    padding: 15px;
+}
