@@ -22,6 +22,8 @@ function PizzaCard({ pizza }) {
             description: pizza.description,
             price: pizza.price,
             image_path: pizza.image_path,
+            quantity: 1,
+            id: pizza.id
           },
         ],
       });
