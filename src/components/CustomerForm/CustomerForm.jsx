@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function CustomerForm() {
 
@@ -11,10 +10,6 @@ function CustomerForm() {
     const [type, setType] = useState("Pickup")
 
     const dispatch = useDispatch();
-    const history = useHistory();
-
-
-
 
     const handlePickup = () => {
         setType("Pickup")
@@ -34,7 +29,6 @@ function CustomerForm() {
         setCity("");
         setZipCode("");
         setType("Pickup")
-        history.push('/checkout')
     };
 
 
@@ -52,9 +46,9 @@ function CustomerForm() {
             <br></br><br></br>
             
             <div>
-                <input type="radio" value={type === "Pickup"} onChange={handlePickup}></input>
+                <input type="radio" value={type === "Pickup"} onChange={handlePickup} name="Type"></input>
                 <label htmlFor="pickup-btn">PICKUP</label>
-                <input type="radio" value={type === "Delivery"} onChange={handleDelivery}></input>
+                <input type="radio" value={type === "Delivery"} onChange={handleDelivery} name="Type"></input>
                 <label htmlFor="delivery-btn">DELIVERY</label>
             </div>
 
