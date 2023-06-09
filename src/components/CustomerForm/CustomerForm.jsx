@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function CustomerForm() {
 
@@ -8,6 +9,7 @@ function CustomerForm() {
     const [city, setCity] = useState("");
     const [zipCode, setZipCode] = useState("");
     const [type, setType] = useState("Pickup")
+    const history = useHistory()
 
     const dispatch = useDispatch();
 
@@ -21,6 +23,7 @@ function CustomerForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        history.push('/checkout')
         
         dispatch({type: "GET_FORM", payload: {name, address, city, zipCode, type}})
         
