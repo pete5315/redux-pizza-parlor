@@ -13,12 +13,22 @@ function Checkout() {
   }
   console.log('totalcost:', totalCost);
   const postCheckout = () =>{
-    axios.post("/api/order",{formData, orderList})
-    .then((response)=>{
-      console.log('Client POST success', response);
-    }).catch((error)=>{
-      console.log('Error in client side POST', error);
-    });
+    axios
+		.post("/api/order", {
+			customer_name: formData.name,
+			street_address: formData.address,
+			city: formData.city,
+			zip: formData.zipCode,
+			type: formData.type,
+      total: totalCost.toFixed(2),
+      pizzas: orderList,
+		})
+		.then((response) => {
+			console.log("Client POST success", response);
+		})
+		.catch((error) => {
+			console.log("Error in client side POST", error);
+		});
   }
   return (
 		<div>
