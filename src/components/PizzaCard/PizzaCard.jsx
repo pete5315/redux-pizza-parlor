@@ -40,6 +40,7 @@ function PizzaCard({ pizza }) {
         />
       </div>
       <p className="PizzaDescription">{pizza.description}</p>
+      <p className="PizzaPrice">${pizza.price}</p>
       <p>
         {added ? (
           <button
