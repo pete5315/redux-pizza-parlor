@@ -43,8 +43,8 @@ function Checkout() {
           </tr>
 				</thead>
 				<tbody>
-						{orderList.map((items) => (
-					<tr key={items.id}>
+						{orderList.map((items, i) => (
+					<tr key={i}>
 							<TableItem items={items} />
 					</tr>
 						))}
