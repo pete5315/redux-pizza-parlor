@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import "./PizzaCard.css";
 
 function PizzaCard({ pizza }) {
   const [added, setAdded] = useState(false);
