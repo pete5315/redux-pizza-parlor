@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function CustomerForm() {
 
@@ -10,6 +11,10 @@ function CustomerForm() {
     const [type, setType] = useState("Pickup")
 
     const dispatch = useDispatch();
+    const history = useHistory();
+
+
+
 
     const handlePickup = () => {
         setType("Pickup")
@@ -29,6 +34,7 @@ function CustomerForm() {
         setCity("");
         setZipCode("");
         setType("Pickup")
+        history.push('/checkout')
     };
 
 
