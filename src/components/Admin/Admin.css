@@ -3,3 +3,9 @@ table, thead, th, tr, td {
     border-collapse: collapse;
     padding: 15px;
 }
+
+table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
