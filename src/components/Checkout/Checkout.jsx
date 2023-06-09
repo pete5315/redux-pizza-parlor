@@ -11,14 +11,6 @@ function Checkout() {
     totalCost += Number(item.price)
 
   }
-  // const totalCost = () =>{
-  //   let total;
-  //   orderList.map((item) => (
-  //     total += item.price
-
-  //   ))
-  //   return total
-  // }
   console.log('totalcost:', totalCost);
   const postCheckout = () =>{
     axios.post("/api/order",{formData, orderList})
