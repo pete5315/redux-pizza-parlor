@@ -15,7 +15,7 @@ const pizzaList = (state = [], action) => {
 };
 
 const orderList = (state = [], action) => {
-  if (action.type === `GET_ORDERS`) {
+  if (action.type === `GET_ORDER`) {
     return  action.payload
   }
   return state;
