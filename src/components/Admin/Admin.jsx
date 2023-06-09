@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
-import './Admin.css'
+import './Adminstyle.css'
 
 function Admin() {
 

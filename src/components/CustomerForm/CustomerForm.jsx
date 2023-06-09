@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import './CustomerForm.css'
+
 
 function CustomerForm() {
 
@@ -37,8 +39,9 @@ function CustomerForm() {
 
     return (
         <>
-        <h2>Step 2: Customer Information</h2>
+        <h2 id="subTitle">Step 2: Customer Information</h2>
         <form onSubmit={handleSubmit}>
+            <div id="inputs">
             <input placeholder="Name" type="text" value={name} onChange={(event) => setName(event.target.value)}></input>
             <br></br><br></br>
             <input placeholder="Street Address" type="text" value={address} onChange={(event) => setAddress(event.target.value)}></input>
@@ -47,16 +50,23 @@ function CustomerForm() {
             <br></br><br></br>
             <input placeholder="Zip Code" type="text" value={zipCode} onChange={(event) => setZipCode(event.target.value)}></input>
             <br></br><br></br>
-            
-            <div>
-                <input type="radio" value={type === "Pickup"} onChange={handlePickup} name="Type"></input>
-                <label htmlFor="pickup-btn">PICKUP</label>
-                <input type="radio" value={type === "Delivery"} onChange={handleDelivery} name="Type"></input>
-                <label htmlFor="delivery-btn">DELIVERY</label>
+            </div>
+
+            <div id="radioBtn">
+                <div>
+                    <input type="radio" value={type === "Pickup"} onChange={handlePickup} name="Type"></input>
+                    <label htmlFor="pickup-btn">PICKUP</label>
+                </div>
+                <div>
+                    <input type="radio" value={type === "Delivery"} onChange={handleDelivery} name="Type"></input>
+                    <label htmlFor="delivery-btn">DELIVERY</label>
+                </div>
             </div>
 
             <br></br><br></br>
-            <button type="submit">Next</button>
+            <div>
+                <button type="submit">Next</button>
+            </div>
         </form>
         </>
     )
