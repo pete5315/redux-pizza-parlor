@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 
 import PizzaList from '../PizzaList/PizzaList'
 import CustomerForm from '../CustomerForm/CustomerForm'
-// import Checkout from '../Checkout/Checkout'
+import Checkout from '../Checkout/Checkout'
 import Admin from '../Admin/Admin'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -55,9 +55,9 @@ function App() {
         <Route exact path="/form">
           <CustomerForm />
         </Route>
-        {/* <Route exact path="/checkout">
+        <Route exact path="/checkout">
           <Checkout />
-        </Route> */}
+        </Route>
         <Route exact path='/admin'>
           <Admin />
         </Route>

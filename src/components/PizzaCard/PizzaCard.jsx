@@ -1,11 +1,11 @@
-import { useSelector } from "react-redux";
+import { useState } from "react";
 
 function PizzaCard({pizza}){
-    const [added, setAdded] = useSelector(false)
+    const [added, setAdded] = useState(false)
 
 
     return (
-		<div className="PizzaCard">
+		<div className="PizzaCard" >
 			<div className="PizzaImageContainer">
 				<img className="PizzaImage" src={pizza.image_path} alt="Example picture of pizza" />
 			</div>
