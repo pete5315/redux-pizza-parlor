@@ -1,18 +1,25 @@
-// import { useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 
 function Header(){
-    // const pizzaStore = useSelector(store => store.pizzaStore)
+let totalCost=0;
+  const orderList = useSelector(store => store.orderList)
+  for (let item of orderList){
+    totalCost += Number(item.price)
+
+  }
     return (
 		<header className="App-header">
 			<h1 className="App-title">Prime Pizza</h1>
 			<span className="cart-total">
+        <p>
 				<span>
 					<button>🛒</button>
 				</span>
 				<span>
-					Total: Value Pulled from pizzaStore
-					{/* pizzaStore.total */}
+					Total: ${totalCost.toFixed(2)}
+
 				</span>
+        </p>
 			</span>
 		</header>
 	);
