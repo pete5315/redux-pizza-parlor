@@ -6,6 +6,12 @@ function Checkout() {
   const formData = useSelector(store => store.formData)
   const orderList = useSelector(store => store.orderList)
   console.log(formData, orderList);
+  let totalCost = 0;
+  for (let item of orderList){
+    totalCost += Number(item.price)
+
+  }
+  console.log('totalcost:', totalCost);
   const postCheckout = () =>{
     axios.post("/api/order",{formData, orderList})
     .then((response)=>{
@@ -44,7 +50,7 @@ function Checkout() {
 						))}
 				</tbody>
 			</table>
-			<h1>Total: 28.98</h1>
+			<h1>Total: ${totalCost.toFixed(2)}</h1>
 			<button onClick={postCheckout}>Checkout</button>
 		</div>
   );
