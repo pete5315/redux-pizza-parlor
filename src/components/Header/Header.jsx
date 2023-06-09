@@ -1,21 +1,20 @@
+import { useState } from "react";
 import { useSelector } from "react-redux"
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 function Header(){
   let totalCost=0;
   const orderList = useSelector(store => store.orderList)
-  const [address, setAddress] = useState("");
+  const location = useLocation();
   for (let item of orderList){
     totalCost += Number(item.price)
 
   }
-  if (address===) {
-    alert("YOU MUST BUY THE PIZZA");
-    setAdded(!added);
-  }
+
     return (
 		<header className="App-header">
 			<h1 className="App-title">Prime Pizza</h1>
-      {added ? (
+      {!(location.pathname==='/checkout') ? (
 			<span className="cart-total">
         
       <p>
