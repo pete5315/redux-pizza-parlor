@@ -28,11 +28,19 @@ const formData = (state = [], action) => {
   return state;
 };
 
+const orderHistory = (state = [], action) => {
+  if (action.type === `GET_HISTORY`) {
+    return  action.payload
+  }
+  return state;
+};
+
 const storeInstance = createStore(
   combineReducers({
     pizzaList,
     orderList,
-    formData
+    formData,
+    orderHistory
   }),
   applyMiddleware(logger),
 );
