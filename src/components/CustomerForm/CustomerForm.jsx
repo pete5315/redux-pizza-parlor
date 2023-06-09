@@ -9,7 +9,11 @@ function CustomerForm() {
     const [zipCode, setZipCode] = useState("");
 
     dispatch = useDispatch();
-    
+    const handleRadio = (event) => {
+        this.setState({
+            selectedOption: event.target.value
+        });
+    }
     const handleSubmit = (event) => {
         event.preventDefault();
         
@@ -34,10 +38,10 @@ function CustomerForm() {
             <br></br><br></br>
             <input placeholder="Zip Code" type="text" value={zipCode} onChange={(event) => setZipCode(event.target.value)}></input>
             <br></br><br></br>
-            <input type="radio" id="pickup-btn"></input>
+            <input type="radio" value="Pickup" checked={this.state.selectedOption === "Pickup"} onChange={handleRadio}></input>
             <label htmlFor="pickup-btn">PICKUP</label>
             <br></br><br></br>
-            <input type="radio" id="delivery-btn"></input>
+            <input type="radio" value="Delivery" checked={this.state.selectedOption === "Delivery"} onChange={handleRadio}></input>
             <label htmlFor="delivery-btn">DELIVERY</label>
             <br></br><br></br>
             <button type="submit">Next</button>
