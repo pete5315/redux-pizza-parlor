@@ -53,8 +53,8 @@ function Admin() {
                 <tbody>
                     
                     {orderHistory.map((order, i) => (
-                        <tr>
-                            <td key={i}>
+                        <tr key={i}>
+                            <td >
                                 {/* person name */}
                                 {order.customer_name}            
                             </td>
