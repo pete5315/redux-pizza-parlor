@@ -44,7 +44,7 @@ function Checkout() {
 						))}
 				</tbody>
 			</table>
-			<h1>Total: 28.98</h1>
+			<h1>Total: $28.98</h1>
 			<button onClick={postCheckout}>Checkout</button>
 		</div>
   );
