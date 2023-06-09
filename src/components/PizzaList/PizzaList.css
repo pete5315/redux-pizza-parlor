@@ -1,0 +1,32 @@
+.CardDeck{
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.PizzaCardNext{
+    background-color: lightblue;
+    width: 200px;
+    padding: 8px;
+    margin: 30px;
+    border: hidden;
+    border-radius: 8px;
+
+
+}
+.PizzaCardNext:hover {
+    background-color: lightblue;
+    box-shadow: 5px 8px black;
+    cursor: pointer;
+
+
+
+}
+.PizzaCardNext:active {
+    transform: scaleY(1.2);
+    transform: scaleX(1.2);
+
+}
