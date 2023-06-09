@@ -7,28 +7,28 @@ function CustomerForm() {
     const [address, setAddress] = useState("");
     const [city, setCity] = useState("");
     const [zipCode, setZipCode] = useState("");
-    const [transport, setTransport] = useState("Pickup")
+    const [type, setType] = useState("Pickup")
 
     const dispatch = useDispatch();
 
     const handlePickup = () => {
-        setTransport("Pickup")
+        setType("Pickup")
     };
 
     const handleDelivery = () => {
-        setTransport("Delivery")
+        setType("Delivery")
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        dispatch({type: "GET_FORM", payload: {name, address, city, zipCode, transport}})
+        dispatch({type: "GET_FORM", payload: {name, address, city, zipCode, type}})
         
         setName("");
         setAddress("");
         setCity("");
         setZipCode("");
-        setTransport("Pickup")
+        setType("Pickup")
     };
 
 
@@ -46,9 +46,9 @@ function CustomerForm() {
             <br></br><br></br>
             
             <div>
-                <input type="radio" value={transport === "Pickup"} onChange={handlePickup}></input>
+                <input type="radio" value={type === "Pickup"} onChange={handlePickup}></input>
                 <label htmlFor="pickup-btn">PICKUP</label>
-                <input type="radio" value={transport === "Delivery"} onChange={handleDelivery}></input>
+                <input type="radio" value={type === "Delivery"} onChange={handleDelivery}></input>
                 <label htmlFor="delivery-btn">DELIVERY</label>
             </div>
 
