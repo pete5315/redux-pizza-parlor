@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux"
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
-
+import './Header.css'
 function Header(){
   let totalCost=0;
   const orderList = useSelector(store => store.orderList)
